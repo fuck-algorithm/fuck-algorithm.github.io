@@ -26,19 +26,7 @@ jobs:
         run: npm install
         
       - name: Build 🏗️
-        run: |
-          # 创建最基本的页面内容
-          mkdir -p dist
-          cp public/index.html dist/
-          cat > dist/bundle.js << 'EOL'
-          // 简单的JS代码
-          document.addEventListener('DOMContentLoaded', function() {
-            const root = document.getElementById('root');
-            if (root) {
-              root.innerHTML = '<div style="text-align:center;padding:50px;"><h1>Fuck Algorithm</h1><p>把一天能理解的知识，缩短到一个小时</p><a href="https://github.com/fuck-algorithm">访问GitHub</a></div>';
-            }
-          });
-          EOL
+        run: npm run build
         
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
