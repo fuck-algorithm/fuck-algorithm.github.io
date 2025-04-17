@@ -1,0 +1,12 @@
+# 浏览器兼容性配置
+# 覆盖市场份额大于0.5%的浏览器
+> 0.5%
+# 排除过时的浏览器
+not dead
+# 包含最后两个版本的主流浏览器
+last 2 Chrome versions
+last 2 Firefox versions
+last 2 Safari versions
+last 2 Edge versions
+# IE11不再支持
+not IE 11 
