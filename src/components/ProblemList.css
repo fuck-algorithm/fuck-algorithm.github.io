@@ -1,0 +1,171 @@
+.problem-list {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 4rem;
+}
+
+.problem-list h2 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.filter-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background: #e0e0e0;
+}
+
+.filter-btn.active {
+  background: #1e1e2e;
+  color: white;
+}
+
+.filter-btn.easy {
+  color: #389e0d;
+  background: #f6ffed;
+}
+
+.filter-btn.easy:hover {
+  background: #d9f7be;
+}
+
+.filter-btn.medium {
+  color: #d46b08;
+  background: #fff7e6;
+}
+
+.filter-btn.medium:hover {
+  background: #ffe7ba;
+}
+
+.filter-btn.hard {
+  color: #cf1322;
+  background: #fff1f0;
+}
+
+.filter-btn.hard:hover {
+  background: #ffa39e;
+}
+
+.problem-table-container {
+  overflow-x: auto;
+}
+
+.problem-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.problem-table th {
+  background-color: #f5f5f7;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+}
+
+.problem-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.problem-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.problem-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.difficulty-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.difficulty-tag.easy {
+  background-color: #f6ffed;
+  color: #389e0d;
+}
+
+.difficulty-tag.medium {
+  background-color: #fff7e6;
+  color: #d46b08;
+}
+
+.difficulty-tag.hard {
+  background-color: #fff1f0;
+  color: #cf1322;
+}
+
+.view-btn {
+  display: inline-block;
+  background-color: #1e1e2e;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.view-btn:hover {
+  background-color: #61dafb;
+  color: #1e1e2e;
+}
+
+@media (max-width: 768px) {
+  .problem-list {
+    padding: 1rem;
+  }
+  
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .problem-table th,
+  .problem-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .view-btn {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+} 
