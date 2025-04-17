@@ -9,10 +9,68 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f5f7;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #1e1e2e;
+      }
+      .slogan {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #555;
+      }
+      .coming-soon {
+        background-color: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+      }
+      .github-link {
+        display: inline-block;
+        margin-top: 20px;
+        background-color: #1e1e2e;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      .github-link:hover {
+        background-color: #333344;
+      }
+    </style>
   </head>
   <body>
     <noscript>您需要启用JavaScript来运行此应用。</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div class="container">
+        <h1>Fuck Algorithm</h1>
+        <p class="slogan">把一天能理解的知识，缩短到一个小时</p>
+        
+        <div class="coming-soon">
+          <h2>网站建设中</h2>
+          <p>我们正在努力为您构建更好的算法学习平台，敬请期待！</p>
+        </div>
+        
+        <a href="https://github.com/fuck-algorithm" class="github-link">访问 GitHub 组织</a>
+      </div>
+    </div>
   </body>
 </html> 
