@@ -3,8 +3,24 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+    # 忽略对文档和配置文件的更改
+    paths-ignore:
+      - '**.md'
+      - '.github/**'
+      - '!.github/workflows/**'
   # 允许手动触发工作流
   workflow_dispatch:
+
+# 设置权限
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# 同时只允许一个部署工作流运行
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -13,6 +29,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # 获取完整历史用于版本信息
 
       - name: Setup Node.js 📦
         uses: actions/setup-node@v3
@@ -22,9 +40,26 @@ jobs:
           
       - name: Install Dependencies 🔧
         run: npm ci
+        
+      - name: Cache Webpack Build 📦
+        uses: actions/cache@v3
+        with:
+          path: |
+            dist
+            .cache
+          key: ${{ runner.os }}-webpack-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('src/**/*') }}
+          restore-keys: |
+            ${{ runner.os }}-webpack-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-webpack-
 
       - name: Build 🏗️
         run: npm run build
+        env:
+          NODE_ENV: production
+          
+      # 测试构建结果（如果有测试命令）
+      # - name: Test 🧪
+      #   run: npm test
         
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
