@@ -9,6 +9,10 @@
 # 生产构建
 /build
 /dist
+# 根目录下的构建文件
+/bundle.js
+/bundle.js.LICENSE.txt
+/index.html
 
 # 杂项
 .DS_Store
