@@ -1,5 +1,7 @@
 import React from 'react';
 import ProblemList from '../components/ProblemList';
+import ProductCard from '../components/ProductCard';
+import { products } from '../data/products';
 
 const Home: React.FC = () => {
   return (
@@ -15,13 +17,13 @@ const Home: React.FC = () => {
       <section id="products" className="products">
         <h2>我们的产品</h2>
         <div className="product-cards">
-          <div className="product-card">
-            <h3>LeetCode Hot 100</h3>
-            <p>LeetCode最热门的100道算法题目解析</p>
-            <a href="https://fuck-algorithm.github.io/leetcode-hot-100/" target="_blank" rel="noopener noreferrer" className="product-link">
-              立即访问
-            </a>
-          </div>
+          {products.map(product => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              variant="simple"
+            />
+          ))}
         </div>
       </section>
 
