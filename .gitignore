@@ -12,7 +12,8 @@
 # 根目录下的构建文件
 /bundle.js
 /bundle.js.LICENSE.txt
-/index.html
+# 对于Vite，根目录的index.html是源文件，需要提交
+# /index.html
 
 # 杂项
 .DS_Store
