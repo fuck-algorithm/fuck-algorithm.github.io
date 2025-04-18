@@ -369,6 +369,8 @@ footer {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .product-link.primary {
@@ -398,6 +400,7 @@ footer {
   margin-left: 1rem;
   font-weight: 500;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 
 .product-details-link:hover {
