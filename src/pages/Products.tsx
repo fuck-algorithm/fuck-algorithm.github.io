@@ -23,7 +23,7 @@ const Products: React.FC = () => {
       <div className="coming-soon">
         <h2>更多产品正在开发中</h2>
         <p>我们正在努力开发更多实用工具和教程，敬请期待！</p>
-        <p>如有任何建议或合作意向，欢迎联系我们。</p>
+        <p className="contact-info">如有任何建议或合作意向，请联系我们：<a href="mailto:contact@fuck-algorithm.github.io">contact@fuck-algorithm.github.io</a></p>
       </div>
     </div>
   );
