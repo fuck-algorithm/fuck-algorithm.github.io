@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // 产品类型定义
@@ -19,6 +19,14 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, variant = 'simple' }) => {
+  const [imageError, setImageError] = useState(false);
+
+  // 处理图片加载错误
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = 'https://via.placeholder.com/300x200?text=Coming+Soon';
+    setImageError(true);
+  };
+  
   // 简单卡片样式，用于首页
   if (variant === 'simple') {
     return (
@@ -44,9 +52,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, variant = 'simple' }
         <img 
           src={product.imageUrl} 
           alt={product.title} 
-          onError={(e) => {
-            e.currentTarget.src = 'https://via.placeholder.com/300x200?text=Coming+Soon';
-          }}
+          onError={handleImageError}
+          className={imageError ? 'placeholder-image' : ''}
         />
       </div>
       <div className="product-content">
