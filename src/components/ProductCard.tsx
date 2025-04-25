@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './ProductCard.css';
 
 // 产品类型定义
 export interface Product {
