@@ -1,17 +1,42 @@
 .problem-list {
   padding: 2rem;
-  background-color: white;
+  background-color: rgba(45, 45, 77, 0.4);
   border-radius: 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  margin-bottom: 4rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(97, 218, 251, 0.1);
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.problem-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.problem-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+}
+
+.problem-list::-webkit-scrollbar-thumb {
+  background: rgba(97, 218, 251, 0.3);
+  border-radius: 5px;
+}
+
+.problem-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(97, 218, 251, 0.5);
 }
 
 .problem-list h2 {
   margin-bottom: 0.5rem;
+  color: #f5f5f7;
+  font-size: 2.2rem;
 }
 
 .subtitle {
-  color: #666;
+  color: #ccc;
   margin-bottom: 2rem;
 }
 
@@ -25,53 +50,54 @@
 
 .filter-label {
   font-weight: 500;
-  color: #555;
+  color: #ddd;
 }
 
 .filter-btn {
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s;
+  color: #f5f5f7;
 }
 
 .filter-btn:hover {
-  background: #e0e0e0;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .filter-btn.active {
-  background: #1e1e2e;
-  color: white;
+  background: #61dafb;
+  color: #1e1e2e;
 }
 
 .filter-btn.easy {
-  color: #389e0d;
-  background: #f6ffed;
+  color: #52c41a;
+  background: rgba(82, 196, 26, 0.1);
 }
 
 .filter-btn.easy:hover {
-  background: #d9f7be;
+  background: rgba(82, 196, 26, 0.2);
 }
 
 .filter-btn.medium {
-  color: #d46b08;
-  background: #fff7e6;
+  color: #faad14;
+  background: rgba(250, 173, 20, 0.1);
 }
 
 .filter-btn.medium:hover {
-  background: #ffe7ba;
+  background: rgba(250, 173, 20, 0.2);
 }
 
 .filter-btn.hard {
-  color: #cf1322;
-  background: #fff1f0;
+  color: #f5222d;
+  background: rgba(245, 34, 45, 0.1);
 }
 
 .filter-btn.hard:hover {
-  background: #ffa39e;
+  background: rgba(245, 34, 45, 0.2);
 }
 
 .problem-table-container {
@@ -87,16 +113,18 @@
 }
 
 .problem-table th {
-  background-color: #f5f5f7;
+  background-color: rgba(30, 30, 46, 0.6);
   padding: 1rem;
   text-align: left;
   font-weight: 600;
-  color: #444;
+  color: #f5f5f7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .problem-table td {
   padding: 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #f5f5f7;
 }
 
 .problem-table tbody tr:last-child td {
@@ -104,7 +132,7 @@
 }
 
 .problem-table tbody tr:hover {
-  background-color: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .difficulty-tag {
@@ -116,24 +144,24 @@
 }
 
 .difficulty-tag.easy {
-  background-color: #f6ffed;
-  color: #389e0d;
+  background-color: rgba(82, 196, 26, 0.1);
+  color: #52c41a;
 }
 
 .difficulty-tag.medium {
-  background-color: #fff7e6;
-  color: #d46b08;
+  background-color: rgba(250, 173, 20, 0.1);
+  color: #faad14;
 }
 
 .difficulty-tag.hard {
-  background-color: #fff1f0;
-  color: #cf1322;
+  background-color: rgba(245, 34, 45, 0.1);
+  color: #f5222d;
 }
 
 .view-btn {
   display: inline-block;
-  background-color: #1e1e2e;
-  color: white;
+  background-color: #61dafb;
+  color: #1e1e2e;
   padding: 0.4rem 1rem;
   border-radius: 1rem;
   text-decoration: none;
@@ -143,8 +171,9 @@
 }
 
 .view-btn:hover {
-  background-color: #61dafb;
-  color: #1e1e2e;
+  background-color: #4fa8d8;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(97, 218, 251, 0.3);
 }
 
 @media (max-width: 768px) {
